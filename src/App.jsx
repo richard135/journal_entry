@@ -1,25 +1,26 @@
 import React from 'react';
-import AsyncTodoList from './components/AsyncTodoList.jsx';
+import ArticleList from './components/ArticleHandlers.jsx';
 import {connect} from 'react-redux';
-import {fetchTodos} from './actions/asyncTodo.actions'
+import ArticleActions from './actions/article.actions.js'
 class App extends React.Component{
   componentDidMount(){
-    this.props.onFetchTodos();
   }
   render(){
     return <div>
       <h2>Please enter your article</h2>
-      <AsyncTodoList/>
-    </div>;
+      <ArticleList/>
+    </div>
   }
 }
+
 App.propTypes = {
-  onFetchTodos: React.PropTypes.func
+  onFetchArticles: React.PropTypes.func
 };
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch) => ({
-  onFetchTodos(){
-    dispatch(fetchTodos());
+  onFetchArticles(){
+    dispatch(fetchArticles());
   }
 })
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default App;
