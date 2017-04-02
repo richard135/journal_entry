@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import asyncTodoReducer from './articles.reducer';
+import articlesReducer from './articles.reducer';
 
 const combined = combineReducers({
-  asyncTodos: asyncTodoReducer
+  articleLists: articlesReducer
 });
 
 export default combined;

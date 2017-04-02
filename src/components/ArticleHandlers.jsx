@@ -1,23 +1,23 @@
 import {connect} from 'react-redux';
-import TodoList from './ArticleList.jsx';
+import ArticleList from './ArticleList.jsx';
 import {deleteArticle, addArticle, updateName} from '../actions/article.actions';
 
 // Takes in the current store, returns a props
-const mapStateToProps = ({asyncTodos}) => ({
-  todos: asyncTodos.list || [],
-  newTodo: asyncTodos.newTodo,
-  loading:asyncTodos.loading
+const mapStateToProps = ({articleLists}) => ({
+  articles: articleLists.list || [],
+  newArticle: articleLists.newArticle,
+  loading: articleLists.loading
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onDelete(todoId){
-    dispatch(deleteArticle(todoId));
+  onDelete(articleId){
+    dispatch(deleteArticle(articleId));
   },
-  onAddTodo(){
+  onAdd(){
     dispatch(addArticle());
   },
   onUpdateName(name){
     dispatch(updateName(name));
   }
 });
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);

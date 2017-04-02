@@ -1,9 +1,11 @@
 import React from 'react';
 
-const TodoList = ({todos, newTodo, loading, onDelete, onAddTodo, onUpdateName}) => {
-  const todoItems = todos.map((article) => {
+const ArticleList = ({articles, newArticle, loading, onDelete, onAdd, onUpdateName}) => {
+  const articleItems = articles.map((article) => {
     return <div key={article.id}>
-      {article.name}
+      {console.log('This is article ====>',article)}
+      <p>Article: {article.name} - Word Count:{article.words} </p>
+      <hr/>
       <button onClick={() => onDelete(article.id)}>Delete</button>
     </div>
   });
@@ -12,14 +14,20 @@ const TodoList = ({todos, newTodo, loading, onDelete, onAddTodo, onUpdateName}) 
     (<div>
       <form onSubmit={(e) => {
         e.preventDefault();
-        onAddTodo();
+        onAdd();
       }}>
         <label className='name'>Article Input Here</label>
-        <input type='textarea' name='name' value={newTodo.name}
+        <input type='textarea' name='name' value={newArticle.name}
           onChange={(e) => onUpdateName(e.target.value)}/>
+        <select>
+          <option value="grapefruit">Grapefruit</option>
+          <option value="lime">Lime</option>
+          <option selected value="coconut">Coconut</option>
+          <option value="mango">Mango</option>
+        </select>
         <button type='submit'>Create</button>
       </form>
-      <ul>{todoItems}</ul>
+      <ul>{articleItems}</ul>
     </div>)
   return <div>
       {listSection}
@@ -28,4 +36,4 @@ const TodoList = ({todos, newTodo, loading, onDelete, onAddTodo, onUpdateName}) 
 
 
 
-export default TodoList;
+export default ArticleList;

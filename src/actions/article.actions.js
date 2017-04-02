@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const deleteArticle = (id) => (dispatch) =>{
   dispatch({type:'DELETE_ARTICLE'});
-  axios.delete(`/todos/${id}`)
+  axios.delete(`/articles/${id}`)
     .then(() => {
       dispatch({type:'DELETE_ARTICLE_SUCCESS', id});
     }, () => {
@@ -13,7 +13,7 @@ export const deleteArticle = (id) => (dispatch) =>{
 export const addArticle = () => (dispatch, getState) => {
   dispatch({type: 'ADD_ARTICLE'});
   console.log('ADD_ARTICLE', getState());
-  axios.post('/todos', {name: getState().asyncTodos.newTodo.name})
+  axios.post('/articles', {name: getState().articleLists.newArticle.name})
     .then((response) => {
       dispatch({type:'ADD_ARTICLE_SUCCESS', data: response.data});
     }, () => {
@@ -23,11 +23,17 @@ export const addArticle = () => (dispatch, getState) => {
 
 export const fetchArticles = () => (dispatch) => {
   dispatch({type: 'FETCH_ARTICLES'});
-  axios.get('/todos')
+  axios.get('/articles')
     .then((response) => {
       dispatch({type: 'FETCH_ARTICLES_SUCCESS', list: response.data});
     }, () => {
       dispatch({type: 'FETCH_ARTICLES_FAILURE'});
     });
 }
-export const updateName = (name) => ({type: 'UPDATE_NAME', name});
+
+export const updateName = (name) => ({
+  type: 'UPDATE_NAME',
+  name:name
+});
+
+

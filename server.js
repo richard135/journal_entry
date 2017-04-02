@@ -8,44 +8,44 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 let index = 1;
-let todos = [
-  {name: 'Prepare Redux Lecture', completed: false, id: 0}
+let articles = [
+  {name: 'Prepare Redux Lecture', id: 0, words:0}
 ];
 app.use(express.static('public'));
 app.use(webpackDevMiddleware(compiler, {
   publicPath: '/build'
 }));
 
-app.get('/todos', (req, res) =>{
-  res.json(todos);
+app.get('/articles', (req, res) =>{
+  res.json(articles);
 });
 
-app.delete('/todos/:id', (req, res) => {
-  todos = todos.filter((todo) => todo.id != req.params.id)
+app.delete('/articles/:id', (req, res) => {
+  articles = articles.filter((article) => article.id != req.params.id)
   res.sendStatus(200);
 });
 
-app.get('/todos/:id', (req, res) => {
-  const todo = todos.find(todoFinder(req.params.id));
-  if(todo){
-    res.json(todo);
+app.get('/articles/:id', (req, res) => {
+  const article = articles.find(articleFinder(req.params.id));
+  if(article){
+    res.json(article);
   } else {
     res.sendStatus(404);
   }
 });
 
-app.post('/todos', (req, res) => {
+app.post('/articles', (req, res) => {
   if(req.body){
     req.body.id = ++index;
-    todos.push(req.body);
+    articles.push(req.body);
     res.json(req.body);
   } else{
     res.sendStatus(400);
   }
 })
 
-app.put('/todos/:id', (req, res) =>{
-  const found = todos.find(todoFinder(req.params.id));
+app.put('/articles/:id', (req, res) =>{
+  const found = articles.find(articleFinder(req.params.id));
   if(found){
     found.completed = true;
     res.json(found);
@@ -54,9 +54,9 @@ app.put('/todos/:id', (req, res) =>{
   }
 })
 
-function todoFinder(id){
-  return function(todo){
-    return todo.id.toString() == id.toString();
+function articleFinder(id){
+  return function(article){
+    return article.id.toString() == id.toString();
   }
 }
 app.listen(3000);
