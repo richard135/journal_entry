@@ -1,10 +1,9 @@
 import React from 'react';
 
-const ArticleList = ({articles, newArticle, loading, onDelete, onAdd, onUpdateName}) => {
+const ArticleList = ({articles, newArticle, loading, onDelete, onAdd, onUpdateName, onUpdateRating}) => {
   const articleItems = articles.map((article) => {
     return <div key={article.id}>
-      {console.log('This is article ====>',article)}
-      <p>Article: {article.name} - Word Count:{article.words} </p>
+      <p>Article: {article.name} - Word Count:{article.words} - Rating: {article.rating}</p>
       <hr/>
       <button onClick={() => onDelete(article.id)}>Delete</button>
     </div>
@@ -17,8 +16,6 @@ const ArticleList = ({articles, newArticle, loading, onDelete, onAdd, onUpdateNa
 
 
 
-
-
   const listSection =
     (<div>
       <form onSubmit={(e) => {
@@ -28,8 +25,10 @@ const ArticleList = ({articles, newArticle, loading, onDelete, onAdd, onUpdateNa
         <label className='name'>Article Input Here</label>
         <input type='textarea' name='name' value={newArticle.name}
           onChange={(e) => onUpdateName(e.target.value)}/>
-        <select>
+        <select className="select" name='select' onChange={(e) => onUpdateRating(e.target.value)}>
+          <optgroup label="Select Table">
           {votingInteger}
+          </optgroup>
         </select>
         <button type='submit'>Create</button>
       </form>

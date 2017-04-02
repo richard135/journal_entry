@@ -13,7 +13,10 @@ export const deleteArticle = (id) => (dispatch) =>{
 export const addArticle = () => (dispatch, getState) => {
   dispatch({type: 'ADD_ARTICLE'});
   console.log('ADD_ARTICLE', getState());
-  axios.post('/articles', {name: getState().articleLists.newArticle.name})
+  axios.post('/articles', {
+    name: getState().articleLists.newArticle.name,
+    rating: getState().articleLists.rating
+  })
     .then((response) => {
       dispatch({type:'ADD_ARTICLE_SUCCESS', data: response.data});
     }, () => {
@@ -34,6 +37,11 @@ export const fetchArticles = () => (dispatch) => {
 export const updateName = (name) => ({
   type: 'UPDATE_NAME',
   name:name
+});
+
+export const updateRating = (rating) => ({
+  type: 'UPDATE_RATING',
+  rating:rating
 });
 
 

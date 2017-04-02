@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import ArticleList from './ArticleList.jsx';
-import {deleteArticle, addArticle, updateName} from '../actions/article.actions';
+import {deleteArticle, addArticle, updateName, updateRating} from '../actions/article.actions';
 
 // Takes in the current store, returns a props
 const mapStateToProps = ({articleLists}) => ({
@@ -18,6 +18,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onUpdateName(name){
     dispatch(updateName(name));
+  },
+  onUpdateRating(rating){
+    dispatch(updateRating(rating));
   }
 });
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);

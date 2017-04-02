@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 let index = 1;
 let articles = [
-  {name: 'Prepare Redux Lecture', id: 0, words:0}
+  {name: 'Prepare Redux Lecture', id: 0, rating:0, words:0}
 ];
 app.use(express.static('public'));
 app.use(webpackDevMiddleware(compiler, {
@@ -35,6 +35,7 @@ app.get('/articles/:id', (req, res) => {
 });
 
 app.post('/articles', (req, res) => {
+  console.log("This is req body",req.body)
   if(req.body){
     req.body.id = ++index;
     articles.push(req.body);
@@ -44,15 +45,6 @@ app.post('/articles', (req, res) => {
   }
 })
 
-app.put('/articles/:id', (req, res) =>{
-  const found = articles.find(articleFinder(req.params.id));
-  if(found){
-    found.completed = true;
-    res.json(found);
-  } else {
-    res.sendStatus(404);
-  }
-})
 
 function articleFinder(id){
   return function(article){

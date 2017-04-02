@@ -3,10 +3,9 @@ const initialState = {
   newArticle: {name: ''},
   loading: false,
   message: undefined,
-  words: 0
+  rating: 0
 };
 const articlesReducer = (state = initialState, action) => {
-  console.log("This is action data=====>", action)
   switch(action.type){
     case 'FETCH_ARTICLES_SUCCESS':{
       return {
@@ -27,7 +26,8 @@ const articlesReducer = (state = initialState, action) => {
         list: state.list.concat(action.data),
         loading: false,
         message: undefined,
-        newArticle: {name: ''}
+        newArticle: {name: ''},
+        rating: action.data
       };
     }
     case 'DELETE_ARTICLE':{
@@ -52,6 +52,13 @@ const articlesReducer = (state = initialState, action) => {
           ...state.newArticle,
           name: action.name
         }
+      };
+    }
+    case 'UPDATE_RATING':{
+      console.log('Rating actio====>', action)
+      return {
+        ...state,
+        rating: action.rating
       };
     }
     default: return state;
