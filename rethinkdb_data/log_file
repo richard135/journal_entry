@@ -1,0 +1,99 @@
+2017-04-02T15:57:31.071991088 0.049314s warn: Parent directory of log file (/vagrant/article/journal_entry/rethinkdb_data/log_file) could not be synced. (Invalid argument)
+2017-04-02T15:57:31.072470658 0.049794s notice: Recursively removing directory /vagrant/article/journal_entry/rethinkdb_data/tmp
+2017-04-02T15:57:31.074316770 0.051640s warn: Failed to sync parent directory of "/vagrant/article/journal_entry/rethinkdb_data/tmp" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2017-04-02T15:57:31.077658838 0.054981s notice: Initializing directory /vagrant/article/journal_entry/rethinkdb_data
+2017-04-02T15:57:31.078014643 0.055337s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/vagrant/article/journal_entry/rethinkdb_data' did not already exist or is empty.)
+2017-04-02T15:57:31.078345106 0.055669s notice: Running rethinkdb 2.3.5~0xenial (GCC 5.3.1)...
+2017-04-02T15:57:31.082985690 0.060312s notice: Running on Linux 4.4.0-71-generic x86_64
+2017-04-02T15:57:31.083243388 0.060566s notice: Loading data from directory /vagrant/article/journal_entry/rethinkdb_data
+2017-04-02T15:57:31.089506306 0.066829s warn: Failed to sync parent directory of "/vagrant/article/journal_entry/rethinkdb_data/tmp/metadata.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2017-04-02T15:57:31.098737136 0.076060s warn: Failed to sync parent directory of "/vagrant/article/journal_entry/rethinkdb_data/tmp/metadata.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2017-04-02T15:57:31.108710271 0.086034s warn: Failed to sync parent directory of "/vagrant/article/journal_entry/rethinkdb_data/metadata" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2017-04-02T15:57:31.113923452 0.091246s info: Automatically using cache size of 100 MB
+2017-04-02T15:57:31.114214453 0.091537s warn: Cache size does not leave much memory for server and query overhead (available memory: 294 MB).
+2017-04-02T15:57:31.114220735 0.091543s warn: Cache size is very low and may impact performance.
+2017-04-02T15:57:31.115938131 0.093261s notice: Listening for intracluster connections on port 29015
+2017-04-02T15:57:31.119160028 0.096483s notice: Listening for client driver connections on port 28015
+2017-04-02T15:57:31.119601412 0.096924s notice: Listening for administrative HTTP connections on port 8080
+2017-04-02T15:57:31.119606606 0.096929s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-04-02T15:57:31.119608866 0.096931s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-04-02T15:57:31.119613158 0.096935s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-04-02T15:57:31.119615390 0.096938s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-04-02T15:57:31.119619109 0.096941s notice: Server ready, "ubuntu_sl7" 2e8d8090-6565-4ddb-a0ac-7c71f417e30f
+2017-04-02T15:57:46.812401295 15.789724s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-04-02T15:57:46.812467158 15.789790s notice: Shutting down client connections...
+2017-04-02T15:57:46.812743936 15.790066s notice: All client connections closed.
+2017-04-02T15:57:46.812746967 15.790069s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-04-02T15:57:46.813937092 15.791260s notice: Storage engine shut down.
+2017-04-02T15:58:47.543745089 0.035644s warn: Parent directory of log file (/vagrant/article/journal_entry/rethinkdb_data/log_file) could not be synced. (Invalid argument)
+2017-04-02T15:58:47.548755459 0.040654s notice: Running rethinkdb 2.3.5~0xenial (GCC 5.3.1)...
+2017-04-02T15:58:47.563032903 0.054934s notice: Running on Linux 4.4.0-71-generic x86_64
+2017-04-02T15:58:47.563327749 0.055226s notice: Loading data from directory /vagrant/article/journal_entry/rethinkdb_data
+2017-04-02T15:58:47.567820218 0.059719s warn: Failed to sync parent directory of "/vagrant/article/journal_entry/rethinkdb_data/metadata" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2017-04-02T15:58:47.583367693 0.075266s info: Automatically using cache size of 100 MB
+2017-04-02T15:58:47.583540684 0.075439s warn: Cache size does not leave much memory for server and query overhead (available memory: 296 MB).
+2017-04-02T15:58:47.583544614 0.075443s warn: Cache size is very low and may impact performance.
+2017-04-02T15:58:47.585089649 0.076988s notice: Listening for intracluster connections on port 29015
+2017-04-02T15:58:47.589208270 0.081107s notice: Listening for client driver connections on port 28015
+2017-04-02T15:58:47.589668537 0.081567s notice: Listening for administrative HTTP connections on port 8080
+2017-04-02T15:58:47.589672765 0.081571s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-04-02T15:58:47.589678679 0.081577s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-04-02T15:58:47.589681859 0.081580s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-04-02T15:58:47.589686791 0.081585s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-04-02T15:58:47.589813209 0.081712s notice: Server ready, "ubuntu_sl7" 2e8d8090-6565-4ddb-a0ac-7c71f417e30f
+2017-04-02T15:59:51.130727417 63.622626s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-04-02T15:59:51.130823275 63.622722s notice: Shutting down client connections...
+2017-04-02T15:59:51.131670275 63.623569s notice: All client connections closed.
+2017-04-02T15:59:51.131672221 63.623570s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-04-02T15:59:51.131897755 63.623796s notice: Storage engine shut down.
+2017-04-02T16:14:43.220190448 0.043158s warn: Parent directory of log file (/vagrant/article/journal_entry/rethinkdb_data/log_file) could not be synced. (Invalid argument)
+2017-04-02T16:14:43.224121754 0.047088s notice: Running rethinkdb 2.3.5~0xenial (GCC 5.3.1)...
+2017-04-02T16:14:43.227847367 0.050817s notice: Running on Linux 4.4.0-71-generic x86_64
+2017-04-02T16:14:43.227965371 0.050932s notice: Loading data from directory /vagrant/article/journal_entry/rethinkdb_data
+2017-04-02T16:14:43.230660007 0.053627s warn: Failed to sync parent directory of "/vagrant/article/journal_entry/rethinkdb_data/metadata" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2017-04-02T16:14:43.238278268 0.061245s info: Automatically using cache size of 100 MB
+2017-04-02T16:14:43.238530787 0.061497s warn: Cache size does not leave much memory for server and query overhead (available memory: 315 MB).
+2017-04-02T16:14:43.238535024 0.061501s warn: Cache size is very low and may impact performance.
+2017-04-02T16:14:43.239492979 0.062460s notice: Listening for intracluster connections on port 29015
+2017-04-02T16:14:43.240840341 0.063807s notice: Listening for client driver connections on port 28015
+2017-04-02T16:14:43.241019016 0.063986s notice: Listening for administrative HTTP connections on port 8080
+2017-04-02T16:14:43.241022678 0.063989s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-04-02T16:14:43.241024702 0.063991s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-04-02T16:14:43.241027635 0.063994s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-04-02T16:14:43.241030442 0.063997s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-04-02T16:14:43.241033231 0.064000s notice: Server ready, "ubuntu_sl7" 2e8d8090-6565-4ddb-a0ac-7c71f417e30f
+2017-04-02T16:17:21.607770582 158.430737s warn: Failed to sync parent directory of "/vagrant/article/journal_entry/rethinkdb_data/tmp/fcd73387-e761-4a34-9786-1461abcc2433.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2017-04-02T16:17:21.637556298 158.460523s warn: Failed to sync parent directory of "/vagrant/article/journal_entry/rethinkdb_data/tmp/fcd73387-e761-4a34-9786-1461abcc2433.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2017-04-02T16:17:21.652339027 158.475306s warn: Failed to sync parent directory of "/vagrant/article/journal_entry/rethinkdb_data/fcd73387-e761-4a34-9786-1461abcc2433" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2017-04-02T16:17:21.653533763 158.476500s info: Table fcd73387-e761-4a34-9786-1461abcc2433: Added replica on this server.
+2017-04-02T16:17:21.653557820 158.476524s info: Table fcd73387-e761-4a34-9786-1461abcc2433: Starting a new Raft election for term 1.
+2017-04-02T16:17:21.659522602 158.482489s info: Table fcd73387-e761-4a34-9786-1461abcc2433: This server is Raft leader for term 1. Latest log index is 0.
+2017-04-02T16:19:55.375788018 312.198755s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-04-02T16:19:55.375984857 312.198951s notice: Shutting down client connections...
+2017-04-02T16:19:55.376341019 312.199308s notice: All client connections closed.
+2017-04-02T16:19:55.376416795 312.199383s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-04-02T16:19:55.384024784 312.206992s notice: Storage engine shut down.
+2017-04-02T16:19:57.349868802 0.041869s warn: Parent directory of log file (/vagrant/article/journal_entry/rethinkdb_data/log_file) could not be synced. (Invalid argument)
+2017-04-02T16:19:57.358974444 0.050974s notice: Running rethinkdb 2.3.5~0xenial (GCC 5.3.1)...
+2017-04-02T16:19:57.367430487 0.059434s notice: Running on Linux 4.4.0-71-generic x86_64
+2017-04-02T16:19:57.368576762 0.060577s notice: Loading data from directory /vagrant/article/journal_entry/rethinkdb_data
+2017-04-02T16:19:57.374981421 0.066982s warn: Failed to sync parent directory of "/vagrant/article/journal_entry/rethinkdb_data/metadata" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2017-04-02T16:19:57.384293891 0.076294s info: Automatically using cache size of 100 MB
+2017-04-02T16:19:57.384572846 0.076573s warn: Cache size does not leave much memory for server and query overhead (available memory: 325 MB).
+2017-04-02T16:19:57.384577668 0.076577s warn: Cache size is very low and may impact performance.
+2017-04-02T16:19:57.386177380 0.078177s notice: Listening for intracluster connections on port 29015
+2017-04-02T16:19:57.390017644 0.082017s warn: Failed to sync parent directory of "/vagrant/article/journal_entry/rethinkdb_data/fcd73387-e761-4a34-9786-1461abcc2433" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2017-04-02T16:19:57.402075568 0.094076s notice: Listening for client driver connections on port 28015
+2017-04-02T16:19:57.402970235 0.094970s notice: Listening for administrative HTTP connections on port 8080
+2017-04-02T16:19:57.402973941 0.094974s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-04-02T16:19:57.402975902 0.094976s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-04-02T16:19:57.402977921 0.094978s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-04-02T16:19:57.403000065 0.095000s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-04-02T16:19:57.403003064 0.095003s notice: Server ready, "ubuntu_sl7" 2e8d8090-6565-4ddb-a0ac-7c71f417e30f
+2017-04-02T16:19:59.054536575 1.746537s info: Table fcd73387-e761-4a34-9786-1461abcc2433: Starting a new Raft election for term 2.
+2017-04-02T16:19:59.057934669 1.749935s info: Table fcd73387-e761-4a34-9786-1461abcc2433: This server is Raft leader for term 2. Latest log index is 3.
+2017-04-02T16:20:00.255904398 2.947905s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-04-02T16:20:00.256174635 2.948175s notice: Shutting down client connections...
+2017-04-02T16:20:00.256819194 2.948819s notice: All client connections closed.
+2017-04-02T16:20:00.256931053 2.948931s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-04-02T16:20:00.260542426 2.952542s notice: Storage engine shut down.
