@@ -1,15 +1,5 @@
 import axios from 'axios';
 
-export const deleteArticle = (id) => (dispatch) =>{
-  dispatch({type:'DELETE_ARTICLE'});
-  axios.delete(`/articles/${id}`)
-    .then(() => {
-      dispatch({type:'DELETE_ARTICLE_SUCCESS', id});
-    }, () => {
-      dispatch({type: 'DELETE_ARTICLE_FAILURE'});
-    });
-};
-
 export const addArticle = () => (dispatch, getState) => {
   dispatch({type: 'ADD_ARTICLE'});
   console.log('ADD_ARTICLE', getState());

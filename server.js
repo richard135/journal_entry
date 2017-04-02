@@ -35,30 +35,6 @@ app.get('/articles', (req, res) =>{
   })
 });
 
-app.delete('/articles/:id', (req, res) => {
-  // articles = articles.filter((article) => article.id != req.params.id)
-  knex('articles')
-  .where("id", req.params.id)
-  .del()
-  res.sendStatus(200);
-});
-
-// app.get('/articles/:id', (req, res) => {
-//   const article = articles.find(articleFinder(req.params.id));
-//   if(article){
-//   knex.select().table('articles').orderBy('sentiment_score', 'desc')
-//   .then(article => {
-//     res.json(article);
-//     console.log('These are the articles being sent to front by update',article)
-//   })
-//   .catch(err => {
-//     console.error('Knex error on insert:', err);
-//   })
-//   } else {
-//     res.sendStatus(404);
-//   }
-// });
-
 app.post('/articles', (req, res) => {
   console.log("This is req body",req.body)
   if(!req.body.name){

@@ -33,17 +33,6 @@ const articlesReducer = (state = initialState, action) => {
         sentiment_score: 0,
       };
     }
-    case 'DELETE_ARTICLE':{
-      return {...state, loading:true};
-    }
-    case 'DELETE_ARTICLE_SUCCESS':{
-      return {...state,
-        list: state.list.filter(article => article.id !== action.id),
-        loading: false,
-        message: undefined
-      };
-    }
-    case 'DELETE_ARTICLE_FAILURE':
     case 'FETCH_ARTICLES_FAILURE':
     case 'ADD_ARTICLE_FAILURE':{
       return {...state, loading: false, message: 'There was a fetch error'};
