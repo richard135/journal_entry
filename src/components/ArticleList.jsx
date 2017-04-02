@@ -10,6 +10,15 @@ const ArticleList = ({articles, newArticle, loading, onDelete, onAdd, onUpdateNa
     </div>
   });
 
+  let votingInteger = [];
+  for (let i = 10; i > -11 ; i--) {
+    votingInteger.push(<option value= {i}> {i} </option>)
+  }
+
+
+
+
+
   const listSection =
     (<div>
       <form onSubmit={(e) => {
@@ -20,10 +29,7 @@ const ArticleList = ({articles, newArticle, loading, onDelete, onAdd, onUpdateNa
         <input type='textarea' name='name' value={newArticle.name}
           onChange={(e) => onUpdateName(e.target.value)}/>
         <select>
-          <option value="grapefruit">Grapefruit</option>
-          <option value="lime">Lime</option>
-          <option selected value="coconut">Coconut</option>
-          <option value="mango">Mango</option>
+          {votingInteger}
         </select>
         <button type='submit'>Create</button>
       </form>
