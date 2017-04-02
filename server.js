@@ -36,7 +36,10 @@ app.get('/articles', (req, res) =>{
 });
 
 app.delete('/articles/:id', (req, res) => {
-  articles = articles.filter((article) => article.id != req.params.id)
+  // articles = articles.filter((article) => article.id != req.params.id)
+  knex('articles')
+  .where("id", req.params.id)
+  .del()
   res.sendStatus(200);
 });
 
@@ -66,7 +69,8 @@ app.post('/articles', (req, res) => {
     articles.push(req.body);
     knex('articles').insert(req.body)
     .then(article => {
-      console.log('These are the articles',article)
+      res.json(req.body);
+      console.log('These are the articles', article)
     })
     .catch(err => {
       console.error('Knex error on insert:', err);

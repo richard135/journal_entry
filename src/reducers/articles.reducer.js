@@ -24,7 +24,7 @@ const articlesReducer = (state = initialState, action) => {
     }
     case 'ADD_ARTICLE_SUCCESS':{
       console.log("This is success data", action.data)
-      return {...state,
+      return {
         list: state.list.concat(action.data),
         loading: false,
         message: undefined,

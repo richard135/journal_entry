@@ -20,8 +20,15 @@ export const addArticle = () => (dispatch, getState) => {
     sentiment_score: getState().articleLists.sentiment_score
   })
     .then((response) => {
-      console.log('This is response data',response)
+      console.log('This is response data from add article',response.data)
       dispatch({type:'ADD_ARTICLE_SUCCESS', data: response.data});
+      axios.get('/articles')
+      .then((response) => {
+        console.log('This is a response data from fetch article', response)
+        dispatch({type: 'FETCH_ARTICLES_SUCCESS', list: response.data});
+      }, () => {
+        dispatch({type: 'FETCH_ARTICLES_FAILURE'});
+      });
     }, () => {
       dispatch({type: 'ADD_ARTICLE_FAILURE'});
     });
@@ -30,11 +37,12 @@ export const addArticle = () => (dispatch, getState) => {
 export const fetchArticles = () => (dispatch) => {
   dispatch({type: 'FETCH_ARTICLES'});
   axios.get('/articles')
-    .then((response) => {
-      dispatch({type: 'FETCH_ARTICLES_SUCCESS', list: response.data});
-    }, () => {
-      dispatch({type: 'FETCH_ARTICLES_FAILURE'});
-    });
+  .then((response) => {
+    console.log('This is a response data from fetch article', response)
+    dispatch({type: 'FETCH_ARTICLES_SUCCESS', list: response.data});
+  }, () => {
+    dispatch({type: 'FETCH_ARTICLES_FAILURE'});
+  });
 }
 
 export const updateName = (name) => ({
