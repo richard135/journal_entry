@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 let index = 1;
 let articles = [
-  {name: 'Prepare Redux Lecture', id: 0, rating:0, words:0, sentiment_score:0}
+  {name: 'Prepare Redux Lecture', id: 0, rating:0, words:0, sentiment_score:10}
 ];
 app.use(express.static('public'));
 app.use(webpackDevMiddleware(compiler, {
@@ -36,6 +36,9 @@ app.get('/articles/:id', (req, res) => {
 
 app.post('/articles', (req, res) => {
   console.log("This is req body",req.body)
+  if(!req.body.name){
+    req.body.words = 0;
+  }
   if(req.body){
     req.body['sentiment_score'] = req.body.rating * req.body.words
     req.body.id = ++index;

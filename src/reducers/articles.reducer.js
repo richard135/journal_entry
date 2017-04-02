@@ -3,7 +3,7 @@ const initialState = {
   newArticle: {name: ''},
   loading: false,
   message: undefined,
-  rating: 0,
+  rating: 10,
   sentiment_score: 0,
   words: 0
 };
@@ -29,7 +29,7 @@ const articlesReducer = (state = initialState, action) => {
         loading: false,
         message: undefined,
         newArticle: {name: ''},
-        rating: 10,
+        rating: action.data.rating,
         sentiment_score: 0,
       };
     }
@@ -56,7 +56,7 @@ const articlesReducer = (state = initialState, action) => {
           ...state.newArticle,
           name: action.name
         },
-        words: action.name.split(' ').length
+        words: action.name.replace(/^\s+|\s+$/g,"").split(/\s+/).length
       };
     }
     case 'UPDATE_RATING':{
@@ -69,5 +69,7 @@ const articlesReducer = (state = initialState, action) => {
     default: return state;
   }
 }
+
+
 
 export default articlesReducer;
