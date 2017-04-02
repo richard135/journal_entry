@@ -8,11 +8,10 @@ const ArticleList = ({articles, newArticle, onAdd, onUpdateName, onUpdateRating}
     </div>
   });
 
-  let votingInteger = [];
+  const votingInteger = [];
   for (let i = 10; i > -11 ; i--) {
     votingInteger.push(<option value= {i}> {i} </option>)
   }
-
 
 
   const listSection =
@@ -33,11 +32,10 @@ const ArticleList = ({articles, newArticle, onAdd, onUpdateName, onUpdateRating}
       </form>
       <ul>{articleItems}</ul>
     </div>)
-  return <div>
+    return <div>
       {listSection}
     </div>;
 };
 
-
-
 export default ArticleList;
+

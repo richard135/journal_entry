@@ -1,8 +1,6 @@
 import axios from 'axios';
 
 export const addArticle = () => (dispatch, getState) => {
-  dispatch({type: 'ADD_ARTICLE'});
-  console.log('ADD_ARTICLE', getState());
   axios.post('/articles', {
     name: getState().articleLists.newArticle.name,
     rating: getState().articleLists.rating,
@@ -10,11 +8,9 @@ export const addArticle = () => (dispatch, getState) => {
     sentiment_score: getState().articleLists.sentiment_score
   })
     .then((response) => {
-      console.log('This is response data from add article',response.data)
       dispatch({type:'ADD_ARTICLE_SUCCESS', data: response.data});
       axios.get('/articles')
       .then((response) => {
-        console.log('This is a response data from fetch article', response)
         dispatch({type: 'FETCH_ARTICLES_SUCCESS', list: response.data});
       }, () => {
         dispatch({type: 'FETCH_ARTICLES_FAILURE'});
@@ -25,10 +21,8 @@ export const addArticle = () => (dispatch, getState) => {
 };
 
 export const fetchArticles = () => (dispatch) => {
-  dispatch({type: 'FETCH_ARTICLES'});
   axios.get('/articles')
   .then((response) => {
-    console.log('This is a response data from fetch article', response)
     dispatch({type: 'FETCH_ARTICLES_SUCCESS', list: response.data});
   }, () => {
     dispatch({type: 'FETCH_ARTICLES_FAILURE'});

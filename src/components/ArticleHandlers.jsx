@@ -5,8 +5,7 @@ import {addArticle, updateName, updateRating} from '../actions/article.actions';
 // Takes in the current store, returns a props
 const mapStateToProps = ({articleLists}) => ({
   articles: articleLists.list || [],
-  newArticle: articleLists.newArticle,
-  loading: articleLists.loading
+  newArticle: articleLists.newArticle
 });
 
 const mapDispatchToProps = (dispatch) => ({

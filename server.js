@@ -28,7 +28,6 @@ app.get('/articles', (req, res) =>{
   knex.select().table('articles').orderBy('sentiment_score', 'desc')
   .then(article => {
     res.json(article);
-    console.log('These are the articles being sent to front',article)
   })
   .catch(err => {
     console.error('Knex error on insert:', err);
@@ -36,7 +35,6 @@ app.get('/articles', (req, res) =>{
 });
 
 app.post('/articles', (req, res) => {
-  console.log("This is req body",req.body)
   if(!req.body.name){
     req.body.words = 0;
   }
@@ -46,7 +44,6 @@ app.post('/articles', (req, res) => {
     knex('articles').insert(req.body)
     .then(article => {
       res.json(req.body);
-      console.log('These are the articles', article)
     })
     .catch(err => {
       console.error('Knex error on insert:', err);
