@@ -3,7 +3,7 @@ import React from 'react';
 const ArticleList = ({articles, newArticle, loading, onDelete, onAdd, onUpdateName, onUpdateRating}) => {
   const articleItems = articles.map((article) => {
     return <div key={article.id}>
-      <p>Article: {article.name} - Word Count:{article.words} - Rating: {article.rating}</p>
+      <p>Article: {article.name} - Word Count:{article.words} - Rating: {article.rating} - Sentiment Score: {article.sentiment_score}</p>
       <hr/>
       <button onClick={() => onDelete(article.id)}>Delete</button>
     </div>

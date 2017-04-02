@@ -3,11 +3,13 @@ const initialState = {
   newArticle: {name: ''},
   loading: false,
   message: undefined,
-  rating: 0
+  rating: 0,
+  sentiment_score: 0,
+  words: 0
 };
 const articlesReducer = (state = initialState, action) => {
   switch(action.type){
-    case 'FETCH_ARTICLES_SUCCESS':{
+    case 'FETCH_ARTICLES':{
       return {
         ...state, loading: true
       };
@@ -21,13 +23,14 @@ const articlesReducer = (state = initialState, action) => {
       return {...state, loading: true, message: undefined};
     }
     case 'ADD_ARTICLE_SUCCESS':{
-      action.data['words'] = action.data.name.split(' ').length;
+      console.log("This is success data", action.data)
       return {
         list: state.list.concat(action.data),
         loading: false,
         message: undefined,
         newArticle: {name: ''},
-        rating: action.data
+        rating: 10,
+        sentiment_score: 0,
       };
     }
     case 'DELETE_ARTICLE':{
@@ -46,12 +49,14 @@ const articlesReducer = (state = initialState, action) => {
       return {...state, loading: false, message: 'There was a fetch error'};
     }
     case 'UPDATE_NAME':{
+      console.log ('This is UPDATE NAME', action)
       return {
         ...state,
         newArticle:{
           ...state.newArticle,
           name: action.name
-        }
+        },
+        words: action.name.split(' ').length
       };
     }
     case 'UPDATE_RATING':{

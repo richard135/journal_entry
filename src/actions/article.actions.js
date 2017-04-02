@@ -15,9 +15,12 @@ export const addArticle = () => (dispatch, getState) => {
   console.log('ADD_ARTICLE', getState());
   axios.post('/articles', {
     name: getState().articleLists.newArticle.name,
-    rating: getState().articleLists.rating
+    rating: getState().articleLists.rating,
+    words: getState().articleLists.words,
+    sentiment_score: getState().articleLists.sentiment_score
   })
     .then((response) => {
+      console.log('This is response data',response)
       dispatch({type:'ADD_ARTICLE_SUCCESS', data: response.data});
     }, () => {
       dispatch({type: 'ADD_ARTICLE_FAILURE'});

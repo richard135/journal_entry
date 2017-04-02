@@ -1,9 +1,10 @@
 import React from 'react';
 import ArticleList from './components/ArticleHandlers.jsx';
 import {connect} from 'react-redux';
-import ArticleActions from './actions/article.actions.js'
+import {fetchArticles} from './actions/article.actions.js'
 class App extends React.Component{
   componentDidMount(){
+    this.props.onFetchArticles();
   }
   render(){
     return <div>
@@ -23,4 +24,4 @@ const mapDispatchToProps = (dispatch) => ({
   }
 })
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
