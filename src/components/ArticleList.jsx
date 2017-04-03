@@ -12,13 +12,10 @@ const ArticleList = ({articles, newArticle, onAdd, onUpdateName, onUpdateRating}
       </div>
     </div>
   });
-
   const votingInteger = [];
   for (let i = 10; i > -11 ; i--) {
     votingInteger.push(<option key={i} value= {i}> {i} </option>)
   }
-
-
   const listSection =
     (<div>
       <div className="widget-area no-padding blank">
