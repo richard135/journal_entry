@@ -17,7 +17,7 @@ const knex = require('knex')(
 app.use(bodyParser.json());
 let index = 1;
 let articles = [
-  {name: 'Prepare Redux Lecture', id: 0, rating:0, words:0, sentiment_score:10}
+  {name: '', id: 0, rating:0, words:0, sentiment_score:0}
 ];
 app.use(express.static('public'));
 app.use(webpackDevMiddleware(compiler, {
