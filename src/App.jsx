@@ -21,9 +21,7 @@ class App extends React.Component{
   }
 }
 
-App.propTypes = {
-  onFetchArticles: React.PropTypes.func
-};
+
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch) => ({
   onFetchArticles(){
