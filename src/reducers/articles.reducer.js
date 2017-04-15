@@ -6,6 +6,7 @@ const initialState = {
   sentiment_score: 0,
   words: 0
 };
+//...State is to change the current state for immutability
 const articlesReducer = (state = initialState, action) => {
   switch(action.type){
     case 'FETCH_ARTICLES_SUCCESS':{
@@ -20,10 +21,6 @@ const articlesReducer = (state = initialState, action) => {
         rating: action.data.rating,
         sentiment_score: 0,
       };
-    }
-    case 'FETCH_ARTICLES_FAILURE':
-    case 'ADD_ARTICLE_FAILURE':{
-      return {...state, message: 'There was a fetch error'};
     }
     case 'UPDATE_NAME':{
       return {

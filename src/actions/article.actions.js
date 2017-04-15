@@ -8,6 +8,7 @@ export const addArticle = () => (dispatch, getState) => {
     sentiment_score: getState().articleLists.sentiment_score
   })
     .then((response) => {
+      console.log('This is actions from axios call',response.data)
       dispatch({type:'ADD_ARTICLE_SUCCESS', data: response.data});
       axios.get('/articles')
       .then((response) => {

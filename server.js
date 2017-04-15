@@ -54,10 +54,4 @@ app.post('/articles', (req, res) => {
 })
 
 
-
-function articleFinder(id){
-  return function(article){
-    return article.id.toString() == id.toString();
-  }
-}
 app.listen(3000);
